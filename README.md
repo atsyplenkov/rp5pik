@@ -8,7 +8,8 @@
 [![R-CMD-check](https://github.com/atsyplenkov/rp5pik/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/atsyplenkov/rp5pik/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of rp5pik is to …
+The `rp5pik` package provides a set of functions to download and
+preprocess meteorological data from <http://www.pogodaiklimat.ru/>.
 
 ## Installation
 

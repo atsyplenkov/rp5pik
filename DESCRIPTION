@@ -8,7 +8,7 @@ Authors@R:
     role = c("cre", "aut"),
     comment = c(ORCID = "0000-0003-4144-8402")))
 Maintainer: Anatoly Tsyplenkov <atsyplenkov@gmail.com>
-Description: This pacakge provide a set of functions to download and preprocess meteorological data from http://www.pogodaiklimat.ru/.
+Description: This package provides a set of functions to download and preprocess meteorological data from http://www.pogodaiklimat.ru/.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
