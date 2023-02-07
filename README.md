@@ -6,15 +6,16 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of `rp5pik` is to provide cli interface to download
-meteorological data from <http://www.pogodaiklimat.ru/> directly to R.
+The goal of rp5pik is to …
 
 ## Installation
 
-You can install the development version of rp5pik like so:
+You can install the development version of rp5pik from
+[GitHub](https://github.com/) with:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# install.packages("devtools")
+devtools::install_github("atsyplenkov/rp5pik")
 ```
 
 ## Example
