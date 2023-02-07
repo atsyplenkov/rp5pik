@@ -23,4 +23,5 @@ Imports:
   stringr,
   tibble,
   tidyr
-  
+URL: https://github.com/atsyplenkov/rp5pik
+BugReports: https://github.com/atsyplenkov/rp5pik/issues
