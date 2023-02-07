@@ -23,9 +23,9 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
-      - name: Install pak and query dependencies
+      - name: Install rmarkdown and query dependencies
         run: |
-          install.packages("rmarkdown", dependencies = TRUE")
+          install.packages("rmarkdown", dependencies = TRUE)
         shell: Rscript {0}
 
       - name: Render Rmarkdown files and Commit Results
