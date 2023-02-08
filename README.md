@@ -14,7 +14,7 @@ commit](https://img.shields.io/github/last-commit/atsyplenkov/rp5pik)
 <!-- badges: end -->
 
 The `rp5pik` package provides a set of functions to download and
-preprocess meteorological data from <http://www.pogodaiklimat.ru/>.
+preprocess meteorological data from <http://www.pogodaiklimat.ru/>
 
 ## Installation
 
