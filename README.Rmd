@@ -89,7 +89,7 @@ numeric. Average 10-min wind speed, m/s
 numeric. Maximum wind speed, m/s
 
 We can visualize the `example` dataset using `ggplot2` as follows:
-```{r plot, fig.align='center', dpi=1000, fig.width=7, fig.height=5, out.width='80%', prompt=TRUE}
+```{r plot, fig.align='center', dpi=1000, fig.width=7, fig.height=5, out.width='80%'}
 library(ggplot2)
 
 example |> 

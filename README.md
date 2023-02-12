@@ -88,22 +88,22 @@ List of available variables:
 We can visualize the `example` dataset using `ggplot2` as follows:
 
 ``` r
-> library(ggplot2)
-> 
-> example |> 
-+   ggplot(
-+     aes(
-+       x = datetime_utc,
-+       y = ta,
-+       group = wmo
-+     )
-+   ) +
-+   geom_line(aes(color = wmo)) +
-+   labs(
-+     x = "",
-+     y = "Average Temperature, °C"
-+   ) +
-+   theme_minimal()
+library(ggplot2)
+
+example |> 
+  ggplot(
+    aes(
+      x = datetime_utc,
+      y = ta,
+      group = wmo
+    )
+  ) +
+  geom_line(aes(color = wmo)) +
+  labs(
+    x = "",
+    y = "Average Temperature, °C"
+  ) +
+  theme_minimal()
 ```
 
 <img src="man/figures/README-plot-1.png" width="80%" style="display: block; margin: auto;" />
