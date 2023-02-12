@@ -107,3 +107,13 @@ example |>
 ```
 
 <img src="man/figures/README-plot-1.png" width="100%" style="display: block; margin: auto;" />
+
+## Roadmap
+
+    rp5pik 📦
+    ├── Parser functions
+    │   ├── pogodaiklimat
+    │   │   └── rp5pik::parse_pik ☑
+    │   ├── rp5 ☐
+    │   └── gmvo.skniivh ☐
+    └── WMO stations coordinates  ☐

@@ -109,3 +109,13 @@ example |>
 
 ```
 
+## Roadmap
+```
+rp5pik 📦
+├── Parser functions
+│   ├── pogodaiklimat
+│   │   └── rp5pik::parse_pik ☑
+│   ├── rp5 ☐
+│   └── gmvo.skniivh ☐
+└── WMO stations coordinates  ☐
+```
