@@ -106,7 +106,7 @@ example |>
   theme_minimal()
 ```
 
-<img src="man/figures/README-plot-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="man/figures/README-plot-1.png" width="80%" style="display: block; margin: auto;" />
 
 ## Roadmap
 
