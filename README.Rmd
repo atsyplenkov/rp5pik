@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 Sys.setlocale(category = "LC_TIME", locale = "en_us")
 ```
 
-# rp5pik
+# rp5pik <img src="man/figures/rp5pik_logo.png" align="right" height="139" />
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)

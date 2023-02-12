@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rp5pik
+# rp5pik <img src="man/figures/rp5pik_logo.png" align="right" height="139" />
 
 <!-- badges: start -->
 
