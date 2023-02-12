@@ -41,6 +41,7 @@ example <-
     start_date = "2022-05-01",
     end_date = "2022-05-31"
   )
+#> ⠙ 1/2 ETA: 1s | Downloading data
 
 example
 #> # A tibble: 496 × 11
@@ -111,7 +112,7 @@ example |>
 ## Roadmap
 
     rp5pik 📦
-    ├── Parser functions
+    ├── Parser functions for
     │   ├── pogodaiklimat
     │   │   └── rp5pik::parse_pik ☑
     │   ├── rp5 ☐
