@@ -111,7 +111,7 @@ example |>
 ## Roadmap
 
     rp5pik 📦
-    ├── Parser functions for
+    ├── Parser functions
     │   ├── pogodaiklimat
     │   │   └── rp5pik::parse_pik ☑
     │   ├── rp5 ☐
