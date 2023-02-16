@@ -113,7 +113,9 @@ example |>
     rp5pik 📦
     ├── Parser functions for
     │   ├── pogodaiklimat
-    │   │   └── rp5pik::parse_pik ☑
-    │   ├── rp5 ☐
-    │   └── gmvo.skniivh ☐
-    └── WMO stations coordinates  ☐
+    │   │   ├── rp5pik::parse_pik ✅
+    │   │   └── rp5pik::aggregate_pik 🔲
+    │   ├── rp5 🔲
+    │   └── gmvo.skniivh 🔲
+    ├── WMO stations coordinates  🔲
+    └── Rain/Snow guessing  🔲
