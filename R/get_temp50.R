@@ -19,6 +19,7 @@
 #' @export
 #'
 #' @import cli
+#' @importFrom terra vect project extract rast
 
 get_temp50 <-
   function(
@@ -38,7 +39,7 @@ get_temp50 <-
     }
 
     rs_rast <-
-      terra::rast("data/jennings_et_al_2018_temp50_cog.tiff")
+      terra::rast("inst/extdata/jennings_et_al_2018_temp50_cog.tiff")
 
     base::names(rs_rast) <- "temp50"
 
@@ -47,3 +48,65 @@ get_temp50 <-
     terra::extract(rs_rast, aoi)
 
   }
+
+
+# todo --------------------------------------------------------------------
+
+# get_temp50 <-
+#   function(
+    #     wmo_id = "29231",
+#     lat,
+#     lon,
+#     sf_obj
+#   ) {
+#
+#     # load observed 50% rain-snow threshold
+#     obs_file <- "inst/extdata/jennings_et_al_2018_file3_temp50_observed_by_station.Rds"
+#       # system.file("extdata2/jennings_et_al_2018_file3_temp50_observed_by_station.Rds",
+#                   # package = "rp5pik")
+#     obs_rs <-
+#       base::readRDS(obs_file)
+#
+#     # Check if wmo_id is provided
+#     if (!base::is.null(wmo_id)) {
+#
+#       obs_rs_wmo <-
+#         base::match(
+#           base::as.character(wmo_id),
+#           obs_rs$Station_ID
+#         )
+#
+#       if (base::is.na(obs_rs_wmo)) {
+#
+#         cli::cli_abort(
+#           c("x" = "There is no measured 50% temperature
+#             rain-snow threshold in Jennings et al. (2018).
+#             Please, provide {.var sf_obj} or coordinates
+#             ({.var lat} and {.var lon})")
+#         )
+#
+#       } else if (!base::is.na(obs_rs_wmo)) {
+#
+#         return(obs_rs$temp50[obs_rs_wmo])
+#
+#       } else {
+#
+#         cli::cli_abort(
+#           c("x" = "Unexpected error!")
+#         )
+#
+#       }
+#
+#     } else if (base::is.null(wmo_id)) {
+#
+#       cli::cli_abort(
+#         c("x" = "Please, provide {.var sf_obj} or coordinates ({.var lat} and {.var lon})")
+#       )
+#
+#     }
+#
+#   }
+#
+# get_temp50()
+
+

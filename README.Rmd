@@ -34,11 +34,17 @@ You can install the development version of rp5pik from [GitHub](https://github.c
 ``` r
 # install.packages("devtools")
 devtools::install_github("atsyplenkov/rp5pik")
+
+# OR
+
+# install.packages("remotes")
+remotes::install_github("atsyplenkov/rp5pik")
 ```
 
-## Example
+## Examples
+### 1. Data download 
 
-For now there is only one function exists -- `parse_pik`. It allows you to download meteo data at 3h temporal resolution for various stations using their WMO ID:
+Below is an example for `parse_pik` functions. It allows you to download meteo data at **3-hour** temporal resolution for various stations using their WMO ID from [http://www.pogodaiklimat.ru/](http://www.pogodaiklimat.ru/):
 
 ```{r example}
 library(rp5pik)
@@ -109,6 +115,9 @@ example |>
 
 ```
 
+### 2. Data preprocessing
+Since the 
+
 ## Roadmap
 ```
 rp5pik 📦
@@ -119,5 +128,5 @@ rp5pik 📦
 │   ├── rp5 🔲
 │   └── gmvo.skniivh 🔲
 ├── WMO stations coordinates  🔲
-└── Rain/Snow guessing  🔲
+└── Rain/Snow guessing  ✅
 ```

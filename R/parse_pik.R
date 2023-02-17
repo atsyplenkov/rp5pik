@@ -42,8 +42,14 @@
 #'
 #' example
 #'
-#' @import lubridate dplyr purrr tidyr cli
+#' @import cli rvest
 #' @importFrom stats time
+#' @importFrom lubridate day days_in_month month year make_datetime with_tz force_tz
+#' @importFrom stringr str_split
+#' @importFrom purrr map_df
+#' @importFrom tidyr unnest
+#' @importFrom dplyr mutate select
+#'
 
 parse_pik <-
   function(wmo_id = "27524",
@@ -52,17 +58,17 @@ parse_pik <-
 
     # Create a sequence of monthes
     .dates <-
-      seq.Date(
-        from = as.Date(start_date),
-        to = as.Date(end_date),
+      base::seq.Date(
+        from = base::as.Date(start_date),
+        to = base::as.Date(end_date),
         by = 'month'
       )
 
     # Helper variables
     # Empty dataframe to write data to
-    .all_df <- data.frame()
+    .all_df <- base::data.frame()
     # Amount of iterations
-    .tot_blocks <- length(wmo_id) * length(.dates)
+    .tot_blocks <- base::length(wmo_id) * base::length(.dates)
 
     # Initialize the progress bar
     cli::cli_progress_bar(
@@ -77,10 +83,10 @@ parse_pik <-
 
         # create url to parse
         d <-
-          as.Date(d,
+          base::as.Date(d,
                   origin = '1970-01-01')
         u <-
-          paste0(
+          base::paste0(
             'http://www.pogodaiklimat.ru/weather.php?id=', i,
             '&bday=', lubridate::day(d),
             '&fday=', lubridate::days_in_month(d),
@@ -92,7 +98,6 @@ parse_pik <-
         pik_one <-
           tryCatch(
             {
-              # print(paste(u, " parsed."))
               .parse_pik(u, i, lubridate::year(d))
             },
             error = function(e) {
@@ -102,13 +107,12 @@ parse_pik <-
               return(NULL)
             },
             warning = function(w) {
-              # print(w)
               return(NULL)
             }
           )
 
         # Add downloaded data to an empty dataframe
-        .all_df <- rbind(.all_df, pik_one)
+        .all_df <- base::rbind(.all_df, pik_one)
 
         # Progress bar update
         cli::cli_progress_update()
@@ -134,8 +138,8 @@ parse_pik <-
       dplyr::mutate(datetime_utc =
                       lubridate::make_datetime(
                         year = year,
-                        month = as.integer(stringr::str_split(daymon, "\\.", simplify = T)[,2]),
-                        day = as.integer(stringr::str_split(daymon, "\\.", simplify = T)[,1]),
+                        month = base::as.integer(stringr::str_split(daymon, "\\.", simplify = T)[,2]),
+                        day = base::as.integer(stringr::str_split(daymon, "\\.", simplify = T)[,1]),
                         hour = time, tz = "UTC"
                       ),
                     .before = "ta"
@@ -182,19 +186,19 @@ parse_pik <-
 
     # записываем в фрейм
     df <-
-      data.frame(
+      base::data.frame(
         wmo = ind,
         year = yr,
-        daymon = as.character(tbl1$X2),
-        time = as.numeric(tbl1$X1),
-        ta = as.numeric(tbl2$X6),
-        td = as.numeric(tbl2$X7),
-        rh = as.numeric(tbl2$X8),
-        ps = as.numeric(tbl2$X13),
-        psl = as.numeric(tbl2$X12),
+        daymon = base::as.character(tbl1$X2),
+        time = base::as.numeric(tbl1$X1),
+        ta = base::as.numeric(tbl2$X6),
+        td = base::as.numeric(tbl2$X7),
+        rh = base::as.numeric(tbl2$X8),
+        ps = base::as.numeric(tbl2$X13),
+        psl = base::as.numeric(tbl2$X12),
         winds = tbl2$X2,
         windd = tbl2$X1,
-        prec = as.numeric(tbl2$X16)
+        prec = base::as.numeric(tbl2$X16)
       )
 
     return(df)
@@ -203,7 +207,8 @@ parse_pik <-
 
 #' Parse wind speed
 #'
-#' @import stringr tibble
+#' @importFrom stringr str_detect
+#' @importFrom tibble tibble
 #'
 #' @noRd
 
@@ -264,7 +269,7 @@ parse_pik <-
 
       .df <-
         tibble::tibble(
-          winds_mean = as.numeric(x),
+          winds_mean = base::as.numeric(x),
           winds_max = NA_real_,
           winds_nesrok = NA_real_
         )
@@ -281,11 +286,15 @@ parse_pik <-
 
 .extract_values <-
   function(string) {
-    values <- strsplit(string, "[{}|-]")[[1]]
-    return(as.numeric(values))
+
+    values <- base::strsplit(string, "[{}|-]")[[1]]
+    return(base::as.numeric(values))
+
   }
 
 #' Parse wind direction
+#'
+#' @importFrom tibble tibble
 #'
 #' @noRd
 
@@ -312,7 +321,7 @@ parse_pik <-
             225L, 270L, 315L, NA_integer_)
       )
 
-    matches <- match(x, .trans_table$dir_char)
+    matches <- base::match(x, .trans_table$dir_char)
     result <- .trans_table$dir_deg[matches]
 
     return(result)
