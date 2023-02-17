@@ -3,12 +3,12 @@
 #' `r lifecycle::badge('experimental')`
 #'
 #' @description This functions calculates from raw data parsed earlier with
-#' the [rp5pik::parse_pik()] function to a daily averages. It
+#' the [rp5pik::rp_parse_pik()] function to a daily averages. It
 #' took rainfall precipitation sums `prec` measured at 06 UTC and 18 UTC
 #' to calculate a daily precipitation sums `p` (For European part of Russia).
 #' The temperature `t` calculates as a daily average.
 #'
-#' @param .data dataframe. Outcome of the [rp5pik::parse_pik()]
+#' @param .data dataframe. Outcome of the [rp5pik::rp_parse_pik()]
 #' function.
 #' @param .period character. Either `12h` or `24h` --
 #' a string specifying the desired aggregation period.
@@ -27,7 +27,7 @@
 #' @md
 
 
-aggregate_pik <-
+rp_aggregate_pik <-
   function(
     .data,
     .period = c("24h", "12h"),

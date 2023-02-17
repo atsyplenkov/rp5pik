@@ -15,15 +15,15 @@
 #' The function returns a [tibble::tibble()] with
 #' following variables:
 #'
-#'  - `wmo` -- character. WMO index of the meteostation 3&deg;C
+#'  - `wmo` -- character. WMO index of the meteostation
 #'  - `datetime_utc` -- POSIXct. Date and Time of the measurement at UTC
-#'  - `ta` -- numeric. Air temperature at 2m above the surface, &deg;C
-#'  - `td` -- numeric. Dew point, &deg;C
+#'  - `ta` -- numeric. Air temperature at 2m above the surface, degrees
+#'  - `td` -- numeric. Dew point, degrees
 #'  - `rh` -- numeric. Relative humidity at 2m above the surface, %
 #'  - `ps` -- numeric. Atmosphere pressure at meteostation, hPa
 #'  - `psl` -- numeric. Atmosphere pressure adjusted to the height of mean sea level, hPa
 #'  - `prec` -- numeric. **Cumulative** precipitation for the last **12 hours**, mm
-#'  - `windd` -- integer. Wind direction, &deg;C
+#'  - `windd` -- integer. Wind direction, degrees
 #'  - `winds_mean` -- numeric. Average 10-min wind speed, m/s
 #'  - `winds_max` -- numeric. Maximum wind speed, m/s
 #'
@@ -34,7 +34,7 @@
 #' library(rp5pik)
 #'
 #' example <-
-#'   parse_pik(
+#'   rp_parse_pik(
 #'     wmo_id = c("20069", "27524"),
 #'     start_date = "2022-05-01",
 #'     end_date = "2022-05-31"
@@ -51,7 +51,7 @@
 #' @importFrom dplyr mutate select
 #'
 
-parse_pik <-
+rp_parse_pik <-
   function(wmo_id = "27524",
            start_date = "2022-04-01",
            end_date = "2022-05-31"){

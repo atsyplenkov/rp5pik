@@ -23,7 +23,7 @@
 #' @import cli
 #' @importFrom terra vect project extract rast
 
-get_temp50 <-
+rp_get_temp50 <-
   function(
     poi
   ) {

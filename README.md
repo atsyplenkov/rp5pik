@@ -7,6 +7,7 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![pkgcheck](https://github.com/atsyplenkov/rp5pik/workflows/pkgcheck/badge.svg)](https://github.com/atsyplenkov/rp5pik/actions?query=workflow%3Apkgcheck)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rp5pik)](https://CRAN.R-project.org/package=rp5pik)
 ![GitHub R package
@@ -37,15 +38,15 @@ remotes::install_github("atsyplenkov/rp5pik")
 
 ### 1. Data download
 
-Below is an example for `parse_pik` functions. It allows you to download
-meteo data at **3-hour** temporal resolution for various stations using
-their WMO ID from <http://www.pogodaiklimat.ru/>:
+Below is an example for `rp_parse_pik` functions. It allows you to
+download meteo data at **3-hour** temporal resolution for various
+stations using their WMO ID from <http://www.pogodaiklimat.ru/>:
 
 ``` r
 library(rp5pik)
 
 example <-
-  parse_pik(
+  rp_parse_pik(
     wmo_id = c("20069", "27524"),
     start_date = "2022-05-01",
     end_date = "2022-05-31"
@@ -119,12 +120,12 @@ example |>
 
 ### 2. Data preprocessing
 
-Since the downloaded with `parse_pik` data contains raw data, it
+Since the downloaded with `rp_parse_pik` data contains raw data, it
 requires additional checking and cleaning. We suggest to explore the raw
 dataset by yourselves before any further manipulations.
 
 However, the `rp5pik` package has a function to aggregate raw data on
-daily (`24h`) or semi-daily (`12h`) periods. The `aggregate_pik`
+daily (`24h`) or semi-daily (`12h`) periods. The `rp_aggregate_pik`
 function removes known error codes from precipitation data (`699`
 values). Additionally, it calculates daily precipitation sums based on
 measured precipitation at 06 UTC and 18 UTC in European part of Russia
@@ -140,7 +141,7 @@ library(dplyr)
 
 example_daily <- 
   example |> 
-  aggregate_pik(.period = "24h") |> 
+  rp_aggregate_pik(.period = "24h") |> 
   group_split(wmo)
 
 example_daily
@@ -199,7 +200,7 @@ library(dplyr)
 
 example_12h <- 
   example |> 
-  aggregate_pik(.period = "12h") |> 
+  rp_aggregate_pik(.period = "12h") |> 
   group_split(wmo)
 
 example_12h
@@ -258,9 +259,10 @@ example_12h
     rp5pik 📦
     ├── Parser functions for
     │   ├── pogodaiklimat
-    │   │   ├── rp5pik::parse_pik ✅
-    │   │   └── rp5pik::aggregate_pik ✅
+    │   │   ├── rp5pik::rp_parse_pik ✅
+    │   │   └── rp5pik::rp_aggregate_pik ✅
     │   ├── rp5 🔲
     │   └── gmvo.skniivh 🔲
     ├── WMO stations coordinates  🔲
-    └── Rain/Snow guessing  ✅
+    └── Rain/Snow guessing  
+        └── rp5pik::rp_get_temp50 ✅
