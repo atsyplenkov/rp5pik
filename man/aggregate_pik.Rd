@@ -10,15 +10,15 @@ aggregate_pik(.data, .period = c("24h", "12h"), .tz = "Europe/Moscow")
 \item{.data}{dataframe. Outcome of the \code{\link[=parse_pik]{parse_pik()}}
 function.}
 
-\item{.period}{character. Either \code{12h} or \code{24h} --
+\item{.period}{character. Either \verb{12h} or \verb{24h} --
 a string specifying the desired aggregation period.}
 
 \item{.tz}{character. A string describing timezone of the
-meteostation of interest. See \code{\link[lubridate]{with_tz}}
+meteostation of interest. See \code{\link[lubridate:with_tz]{lubridate::with_tz()}}
 for details.}
 }
 \value{
-A \code{\link[tibble]{tibble}}
+A \code{\link[tibble:tibble]{tibble::tibble()}}
 }
 \description{
 This functions calculates from raw data parsed earlier with
@@ -26,4 +26,7 @@ the \code{\link[=parse_pik]{parse_pik()}} function to a daily averages. It
 took rainfall precipitation sums \code{prec} measured at 06 UTC and 18 UTC
 to calculate a daily precipitation sums \code{p} (For European part of Russia).
 The temperature \code{t} calculates as a daily average.
+}
+\details{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }

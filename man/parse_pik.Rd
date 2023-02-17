@@ -16,28 +16,29 @@ period. Write date in the following format \code{YYYY-MM-DD}}
 period. Write date in the following format \code{YYYY-MM-DD}}
 }
 \value{
-A \code{\link[tibble]{tibble}}
+A \code{\link[tibble:tibble]{tibble::tibble()}}
 }
 \description{
-A function to parse \href{http://www.pogodaiklimat.ru/}{http://www.pogodaiklimat.ru/}
+A function to parse \url{http://www.pogodaiklimat.ru/}
 3-hourly meteo data.
 }
 \details{
-The function returns a \code{\link[tibble]{tibble}} with
-following variables:
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
 
-\describe{
- \item{wmo}{character. WMO index of the meteostation}
- \item{datetime_utc}{POSIXct. Date and Time of the measurement at UTC}
- \item{ta}{numeric. Air temperature at 2m above the surface, \eqn{^{\circ}C}}
- \item{td}{numeric. Dew point, \eqn{^{\circ}C}}
- \item{rh}{numeric. Relative humidity at 2m above the surface, \eqn{\%}}
- \item{ps}{numeric. Atmosphere pressure at meteostation, \eqn{hPa}}
- \item{psl}{numeric. Atmosphere pressure adjusted to the height of mean sea level, \eqn{hPa}}
- \item{prec}{numeric. \bold{Cumulative} precipitation for the last 12 hours, \eqn{mm}}
- \item{windd}{integer. Wind direction, \eqn{^{\circ}deg}}
- \item{winds_mean}{numeric. Average 10-min wind speed, \eqn{m {\cdot} s^{-1}}}
- \item{winds_max}{numeric. Maximum wind speed, \eqn{m {\cdot} s^{-1}}}
+The function returns a \code{\link[tibble:tibble]{tibble::tibble()}} with
+following variables:
+\itemize{
+\item \code{wmo} -- character. WMO index of the meteostation 3°C
+\item \code{datetime_utc} -- POSIXct. Date and Time of the measurement at UTC
+\item \code{ta} -- numeric. Air temperature at 2m above the surface, °C
+\item \code{td} -- numeric. Dew point, °C
+\item \code{rh} -- numeric. Relative humidity at 2m above the surface, \%
+\item \code{ps} -- numeric. Atmosphere pressure at meteostation, hPa
+\item \code{psl} -- numeric. Atmosphere pressure adjusted to the height of mean sea level, hPa
+\item \code{prec} -- numeric. \strong{Cumulative} precipitation for the last \strong{12 hours}, mm
+\item \code{windd} -- integer. Wind direction, °C
+\item \code{winds_mean} -- numeric. Average 10-min wind speed, m/s
+\item \code{winds_max} -- numeric. Maximum wind speed, m/s
 }
 }
 \examples{

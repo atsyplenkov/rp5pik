@@ -1,9 +1,11 @@
-#' Get 50\% rain-snow air temperature threshold
+#' Get 50% rain-snow air temperature threshold
+#'
+#' `r lifecycle::badge('experimental')`
 #'
 #' @description This function uses 50% rain-snow air temperature threshold map
-#' created by \emph{Jennings et al.} (\href{https://www.nature.com/articles/s41467-018-03629-7}{2018})
+#' created by *Jennings et al.* ([2018](https://www.nature.com/articles/s41467-018-03629-7))
 #' and returns the expected threshold value in a point. Works
-#' only for Northern Hemisphere. See \emph{Jennings et al.} (\href{https://www.nature.com/articles/s41467-018-03629-7}{2018})
+#' only for Northern Hemisphere. See *Jennings et al.* ([2018](https://www.nature.com/articles/s41467-018-03629-7))
 #' for coverage details.
 #'
 #' At this temperature precipitation occurs as rain and snow

@@ -1,33 +1,33 @@
 #' Parse pogodaiklimat.ru
 #'
-#' A function to parse \href{http://www.pogodaiklimat.ru/}{http://www.pogodaiklimat.ru/}
+#' `r lifecycle::badge('stable')`
+#'
+#' @description A function to parse [http://www.pogodaiklimat.ru/](http://www.pogodaiklimat.ru/)
 #' 3-hourly meteo data.
 #'
 #' @param wmo_id character. WMO meteostation ID to parse
 #' @param start_date character. The beginning of the parsing
-#' period. Write date in the following format \code{YYYY-MM-DD}
+#' period. Write date in the following format `YYYY-MM-DD`
 #' @param end_date character. The end of the parsing period
-#' period. Write date in the following format \code{YYYY-MM-DD}
+#' period. Write date in the following format `YYYY-MM-DD`
 #'
 #' @details
-#' The function returns a \code{\link[tibble]{tibble}} with
+#' The function returns a [tibble::tibble()] with
 #' following variables:
 #'
-#' \describe{
-#'  \item{wmo}{character. WMO index of the meteostation}
-#'  \item{datetime_utc}{POSIXct. Date and Time of the measurement at UTC}
-#'  \item{ta}{numeric. Air temperature at 2m above the surface, \eqn{^{\circ}C}}
-#'  \item{td}{numeric. Dew point, \eqn{^{\circ}C}}
-#'  \item{rh}{numeric. Relative humidity at 2m above the surface, \eqn{\%}}
-#'  \item{ps}{numeric. Atmosphere pressure at meteostation, \eqn{hPa}}
-#'  \item{psl}{numeric. Atmosphere pressure adjusted to the height of mean sea level, \eqn{hPa}}
-#'  \item{prec}{numeric. \bold{Cumulative} precipitation for the last 12 hours, \eqn{mm}}
-#'  \item{windd}{integer. Wind direction, \eqn{^{\circ}deg}}
-#'  \item{winds_mean}{numeric. Average 10-min wind speed, \eqn{m {\cdot} s^{-1}}}
-#'  \item{winds_max}{numeric. Maximum wind speed, \eqn{m {\cdot} s^{-1}}}
-#' }
+#'  - `wmo` -- character. WMO index of the meteostation 3&deg;C
+#'  - `datetime_utc` -- POSIXct. Date and Time of the measurement at UTC
+#'  - `ta` -- numeric. Air temperature at 2m above the surface, &deg;C
+#'  - `td` -- numeric. Dew point, &deg;C
+#'  - `rh` -- numeric. Relative humidity at 2m above the surface, %
+#'  - `ps` -- numeric. Atmosphere pressure at meteostation, hPa
+#'  - `psl` -- numeric. Atmosphere pressure adjusted to the height of mean sea level, hPa
+#'  - `prec` -- numeric. **Cumulative** precipitation for the last **12 hours**, mm
+#'  - `windd` -- integer. Wind direction, &deg;C
+#'  - `winds_mean` -- numeric. Average 10-min wind speed, m/s
+#'  - `winds_max` -- numeric. Maximum wind speed, m/s
 #'
-#' @return A \code{\link[tibble]{tibble}}
+#' @return A [tibble::tibble()]
 #' @export
 #'
 #' @examples

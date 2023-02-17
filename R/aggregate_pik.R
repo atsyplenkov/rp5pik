@@ -1,20 +1,22 @@
 #' Aggregate parsed PiK data
 #'
-#' This functions calculates from raw data parsed earlier with
+#' `r lifecycle::badge('experimental')`
+#'
+#' @description This functions calculates from raw data parsed earlier with
 #' the [rp5pik::parse_pik()] function to a daily averages. It
-#' took rainfall precipitation sums \code{prec} measured at 06 UTC and 18 UTC
-#' to calculate a daily precipitation sums \code{p} (For European part of Russia).
-#' The temperature \code{t} calculates as a daily average.
+#' took rainfall precipitation sums `prec` measured at 06 UTC and 18 UTC
+#' to calculate a daily precipitation sums `p` (For European part of Russia).
+#' The temperature `t` calculates as a daily average.
 #'
 #' @param .data dataframe. Outcome of the [rp5pik::parse_pik()]
 #' function.
-#' @param .period character. Either \code{12h} or \code{24h} --
+#' @param .period character. Either `12h` or `24h` --
 #' a string specifying the desired aggregation period.
 #' @param .tz character. A string describing timezone of the
-#' meteostation of interest. See \code{\link[lubridate]{with_tz}}
+#' meteostation of interest. See [lubridate::with_tz()]
 #' for details.
 #'
-#' @return A \code{\link[tibble]{tibble}}
+#' @return A [tibble::tibble()]
 #' @export
 #'
 #' @import cli
