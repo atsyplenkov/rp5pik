@@ -3,7 +3,7 @@
 #' `r lifecycle::badge('stable')`
 #'
 #' @description A function to parse [http://www.pogodaiklimat.ru/](http://www.pogodaiklimat.ru/)
-#' 3-hourly meteo data.
+#' 3-hourly meteodata.
 #'
 #' @param wmo_id character. WMO meteostation ID to parse
 #' @param start_date character. The beginning of the parsing

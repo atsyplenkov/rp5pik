@@ -14,9 +14,11 @@ A data.frame
 }
 \description{
 This function uses 50\% rain-snow air temperature threshold map
-created by \emph{Jennings et al.} (\href{https://www.nature.com/articles/s41467-018-03629-7}{2018})
+created by \emph{Jennings et al.}
+(\href{https://www.nature.com/articles/s41467-018-03629-7}{2018})
 and returns the expected threshold value in a point. Works
-only for Northern Hemisphere. See \emph{Jennings et al.} (\href{https://www.nature.com/articles/s41467-018-03629-7}{2018})
+only for Northern Hemisphere. See \emph{Jennings et al.}
+(\href{https://www.nature.com/articles/s41467-018-03629-7}{2018})
 for coverage details.
 
 At this temperature precipitation occurs as rain and snow
@@ -27,5 +29,8 @@ is primarily rain and below primarily snow.
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 }
 \references{
-Jennings, K.S., Winchell, T.S., Livneh, B. et al. Spatial variation of the rain–snow temperature threshold across the Northern Hemisphere. Nat Commun 9, 1148 (2018). https://doi.org/10.1038/s41467-018-03629-7
+Jennings, K.S., Winchell, T.S., Livneh, B. et al. Spatial
+variation of the rain–snow temperature threshold across the Northern
+Hemisphere. Nat Commun 9, 1148 (2018).
+https://doi.org/10.1038/s41467-018-03629-7
 }
