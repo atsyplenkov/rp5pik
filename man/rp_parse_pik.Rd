@@ -24,7 +24,7 @@ A \code{\link[tibble:tibble]{tibble::tibble()}}
 }
 \description{
 A function to parse \url{http://www.pogodaiklimat.ru/}
-3-hourly meteo data.
+3-hourly meteodata.
 }
 \details{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
