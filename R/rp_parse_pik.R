@@ -56,7 +56,7 @@ rp_parse_pik <-
            start_date = "2022-04-01",
            end_date = "2022-05-31"){
 
-    # Create a sequence of monthes
+    # Create a sequence of months
     .dates <-
       base::seq.Date(
         from = base::as.Date(start_date),
@@ -129,6 +129,8 @@ rp_parse_pik <-
         "i" = "Try different period or reduce the amount of stations"
       ))
     }
+
+    cli::cli_text("Parsing data")
 
     .all_df |>
       dplyr::mutate(wind = purrr::map_df(winds,

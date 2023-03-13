@@ -15,6 +15,9 @@
 #' @param .tz character. A string describing timezone of the
 #' meteostation of interest. See [lubridate::with_tz()]
 #' for details.
+#' @param .direction character. Either `center` or `left`.
+#' The aggregation direction. Applicable only if `.period` is
+#' set to `12h`
 #'
 #' @return A [tibble::tibble()]
 #' @export
@@ -31,7 +34,8 @@ rp_aggregate_pik <-
   function(
     .data,
     .period = c("24h", "12h"),
-    .tz = "Europe/Moscow"
+    .tz = "Europe/Moscow",
+    .direction = c("center", "left")
   ){
 
     if (any(base::is.null(.period), base::length(.period) > 1)) {
@@ -87,6 +91,16 @@ rp_aggregate_pik <-
 
     } else if (.period == "12h") {
 
+      if (.direction == "center") {
+
+        dir_hours <- c(4:15)
+
+      } else if (.direction == "left") {
+
+        dir_hours <- c(10:21)
+
+      }
+
       .data_12h <-
         .data_tz |>
         dplyr::mutate(prec = dplyr::na_if(prec, 699)) |>
@@ -100,8 +114,8 @@ rp_aggregate_pik <-
         dplyr::mutate(
           flag = dplyr::case_when(
             # for Europe/Moscow tz only!!!!
-            lubridate::hour(dt) %in% c(4:15) ~ 9,
-            !lubridate::hour(dt) %in% c(4:15) ~ 21
+            lubridate::hour(dt) %in% dir_hours ~ 9,
+            !lubridate::hour(dt) %in% dir_hours ~ 21
           )
         ) %>%
         dplyr::mutate(

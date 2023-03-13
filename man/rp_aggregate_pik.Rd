@@ -4,7 +4,12 @@
 \alias{rp_aggregate_pik}
 \title{Aggregate parsed PiK data}
 \usage{
-rp_aggregate_pik(.data, .period = c("24h", "12h"), .tz = "Europe/Moscow")
+rp_aggregate_pik(
+  .data,
+  .period = c("24h", "12h"),
+  .tz = "Europe/Moscow",
+  .direction = c("center", "left")
+)
 }
 \arguments{
 \item{.data}{dataframe. Outcome of the \code{\link[=rp_parse_pik]{rp_parse_pik()}}
@@ -16,6 +21,10 @@ a string specifying the desired aggregation period.}
 \item{.tz}{character. A string describing timezone of the
 meteostation of interest. See \code{\link[lubridate:with_tz]{lubridate::with_tz()}}
 for details.}
+
+\item{.direction}{character. Either \code{center} or \code{left}.
+The aggregation direction. Applicable only if \code{.period} is
+set to \verb{12h}}
 }
 \value{
 A \code{\link[tibble:tibble]{tibble::tibble()}}

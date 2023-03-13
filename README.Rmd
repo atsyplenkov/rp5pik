@@ -144,7 +144,7 @@ library(dplyr)
 
 example_12h <- 
   example |> 
-  rp_aggregate_pik(.period = "12h") |> 
+  rp_aggregate_pik(.period = "12h", .direction = "left") |> 
   group_split(wmo)
 
 example_12h

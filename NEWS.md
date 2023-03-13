@@ -1,3 +1,7 @@
+# rp5pik 0.0.2.1
+
+* Added new variable to `rp_aggregate_pik` controlling the aggregation direction: left or center. Still works only with "Europe/Moscow" timezone
+
 # rp5pik 0.0.2
 
 * Minor improvements in `rp_parse_pik` description and dependencies.
