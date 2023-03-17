@@ -1,3 +1,7 @@
+# rp5pik 0.0.2.2
+
+* The previous update contained a critical issue with time aggregating, therefore the `.period` param from `rp_aggregate_pik` has been removed. Currently the aggregation in semi-daily format is working only in left direction, i.e. it calculates a mean value of all params before the timestamp.
+
 # rp5pik 0.0.2.1
 
 * Added new variable to `rp_aggregate_pik` controlling the aggregation direction: left or center. Still works only with "Europe/Moscow" timezone
