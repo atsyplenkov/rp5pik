@@ -20,6 +20,7 @@ Sys.setlocale(category = "LC_TIME", locale = "en_us")
 # rp5pik <img src="man/figures/rp5pik_logo.png" align="right" height="139" />
 
 <!-- badges: start -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8090329.svg)](https://doi.org/10.5281/zenodo.8090329)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![pkgcheck](https://github.com/atsyplenkov/rp5pik/workflows/pkgcheck/badge.svg)](https://github.com/atsyplenkov/rp5pik/actions?query=workflow%3Apkgcheck)
 [![CRAN status](https://www.r-pkg.org/badges/version/rp5pik)](https://CRAN.R-project.org/package=rp5pik)

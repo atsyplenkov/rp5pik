@@ -1,0 +1,11 @@
+bibentry(
+  bibtype  = "Misc",
+  title    = "rp5pik: Download And Preprocess Russian Meteorological Data",
+  author   = "Anatolii Tsyplenkov",
+  copyright = "Open Access",
+	url = "https://zenodo.org/record/8090328",
+	urldate = "2023-06-28",
+	publisher = "Zenodo",
+	year = "2023",
+	doi = "10.5281/ZENODO.8090328",
+)
